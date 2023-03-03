@@ -1,12 +1,13 @@
 <script setup>
 import TheHeader from './components/TheHeader.vue';
 import TheFooter from './components/TheFooter.vue';
+import MainTodo from './components/MainTodo.vue';
 </script>
 
 <template>
     <div class="wrap">
         <TheHeader />
-        <main class="main">Main</main>
+        <main class="main"> <MainTodo /> </main>
         <TheFooter />
     </div>
 </template>
@@ -15,7 +16,7 @@ import TheFooter from './components/TheFooter.vue';
 @import 'assets/css/destyle.css';
 
 .wrap {
-    background-color: rgba(207, 221, 233, 0.3);
+    /* background-color: rgba(207, 221, 233, 0.3); */
     display: flex;
     flex-direction: column;
     align-items: center;
