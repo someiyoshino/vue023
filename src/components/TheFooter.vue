@@ -1,6 +1,6 @@
 <template>
     <footer class="footer">
-        <small>&copy;my-vite-todo</small>
+        <small>&copy;Vue.js todo app</small>
     </footer>
 </template>
 
