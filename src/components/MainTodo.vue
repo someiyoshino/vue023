@@ -1,52 +1,61 @@
 <script setup>
 import { ref } from 'vue';
+import { useTodoList } from '/src/composables/useTodoList.js';
+
+// const todoListRef = ref([]);
+// const ls = localStorage.todoList;
+// todoListRef.value = ls ? JSON.parse(ls) : [];
+// const todoExample = ref(['example1', 'example2', 'example3']);
 const todoRef = ref('');
-const todoListRef = ref([]);
-const ls = localStorage.todoList;
-todoListRef.value = ls ? JSON.parse(ls) : [];
+const isEditRef = ref(false);
+// let editId = -1;
+const { todoListRef, add, show, edit, del, check } = useTodoList();
 
 const addTodo = () => {
-    const id = new Date().getTime();
-    todoListRef.value.push({ id: id, task: todoRef.value });
+    // const id = new Date().getTime();
+    // todoListRef.value.push({ id: id, task: todoRef.value });
     // console.log(todoRef.value);
     // localStorage.todoList = todoRef.value;
-    localStorage.todoList = JSON.stringify(todoListRef.value);
+    // localStorage.todoList = JSON.stringify(todoListRef.value);
     // console.log(localStorage.todoList);
+    // console.log(todoListRef.value);
+    add(todoRef.value);
     todoRef.value = '';
 };
 
-// const todoExample = ref(['example1', 'example2', 'example3']);
-
-const isEditRef = ref(false);
-let editId = -1;
-
 const showTodo = (id) => {
-    const todo = todoListRef.value.find((todo) => todo.id === id);
-    todoRef.value = todo.task;
+    // const todo = todoListRef.value.find((todo) => todo.id === id);
+    // todoRef.value = todo.task;
+    // editId = id;
+    todoRef.value = show(id);
     isEditRef.value = true;
-    editId = id;
 };
 
 const editTodo = () => {
-    const todo = todoListRef.value.find((todo) => todo.id === editId);
-    const idx = todoListRef.value.findIndex((todo) => todo.id === editId);
-    todo.task = todoRef.value;
-    todoListRef.value.splice(idx, 1, todo);
-    localStorage.todoList = JSON.stringify(todoListRef.value);
+    // const todo = todoListRef.value.find((todo) => todo.id === editId);
+    // const idx = todoListRef.value.findIndex((todo) => todo.id === editId);
+    // todo.task = todoRef.value;
+    // todoListRef.value.splice(idx, 1, todo);
+    // localStorage.todoList = JSON.stringify(todoListRef.value);
+    // editId = -1;
+    edit(todoRef.value);
     isEditRef.value = false;
-    editId = -1;
     todoRef.value = '';
 };
 
 const deleteTodo = (id) => {
-    const todo = todoListRef.value.find((todo) => todo.id === id);
-    const idx = todoListRef.value.findIndex((todo) => todo.id === id);
+    // const todo = todoListRef.value.find((todo) => todo.id === id);
+    // const idx = todoListRef.value.findIndex((todo) => todo.id === id);
+    // const { todo, idx } = useTodoList(id);
+    // const delMsg = '「' + todo.task + '」を削除しますか？';
+    // if (!confirm(delMsg)) return;
+    // todoListRef.value.splice(idx, 1);
+    // localStorage.todoList = JSON.stringify(todoListRef.value);
+    del(id);
+};
 
-    const delMsg = '「' + todo.task + '」を削除しますか？';
-    if (!confirm(delMsg)) return;
-
-    todoListRef.value.splice(idx, 1);
-    localStorage.todoList = JSON.stringify(todoListRef.value);
+const changeCheck = (id) => {
+    check(id);
 };
 </script>
 

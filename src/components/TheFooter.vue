@@ -1,6 +1,6 @@
 <template>
     <footer class="footer">
-        <small>&copy;Vue.js todo app</small>
+        <small>&copy;Todo app Vue.js</small>
     </footer>
 </template>
 
