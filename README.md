@@ -27,3 +27,9 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## これはなに？
+
+vercel 向けに sample を作成した。
+vscode から github に upload
+github から vercel へはどうやって更新するかは忘れた。
