@@ -2,6 +2,12 @@
 
 This template should help get you started developing with Vue 3 in Vite.
 
+-   これは、Vue.js、GitHub、Vercel、のテスト
+-   何を参考にしたかは覚えていない。Blog か kindle かなと思う
+-   App の内容は簡単なタスクメモ。タスクデータは、cookie、storage に保存。vercel 側では DB 保存していない
+-   GitHub のデータを更新すると、vercel に自動で反映される。
+-   APP copy.vue 周りはゴミのようだ。使わない components も削除していないようだ。
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
